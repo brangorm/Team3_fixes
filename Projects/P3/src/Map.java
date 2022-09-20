@@ -54,7 +54,23 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
-    return false;
+    
+    //determining if we should return false becuase unable to move because either 
+    //locations map doesn't have the name in it or the components map doesn't have name key 
+    //the field does not have the location in it
+    if ((!this.locations.containsKey(name)) || (!this.components.containsKey(name)) || 
+        (!this.field.containsKey(loc))){
+          return false;
+    }
+    //updating field by first removing type from the current location
+    this.field.get(this.locations.get(name)).remove(type);
+    //now adding type into new loc in field
+    this.field.get(loc).add(type);
+    //updating component
+    this.components.get(name).setLocation(loc.x,loc.y);
+    //updating location
+    this.locations.put(name, loc);
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
