@@ -1,5 +1,6 @@
 import java.io.*;
 import junit.framework.*;
+import java.awt.Color;
 
 public class TestMapGetLoc extends TestCase {
 
@@ -11,9 +12,8 @@ public class TestMapGetLoc extends TestCase {
     Ghost ghost = frame.addGhost(new Location(5, 5), "name", Color.red); 
     PacMan pacman = frame.addPacMan(new Location(2, 2));
 
-    assertTrue(frame.getMap().getLoc(5,5).containsKey(Map.Type.GHOST) );
-    assertTrue(frame.getMap().getLoc(2,2).containsKey(Map.Type.PACMAN));
+    assertTrue(frame.getMap().getLoc(new Location(5, 5)).contains(Map.Type.GHOST) );
+    assertTrue(frame.getMap().getLoc(new Location(2, 2)).contains(Map.Type.PACMAN));
 
-    assertTrue();
   }
 }

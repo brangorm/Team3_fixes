@@ -4,6 +4,7 @@ import junit.framework.*;
 public class TestConsume extends TestCase {
 
   public void testConsume() throws FileNotFoundException {
-    return null;
+    //return null;
+    assertTrue(true);
   }
 }

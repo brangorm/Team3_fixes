@@ -32,7 +32,7 @@ public class Ghost {
   }
 
   public boolean move() {
-    ArrayList validMoves = get_valid_moves();
+    ArrayList<Location> validMoves = get_valid_moves();
 
     if (validMoves == null || validMoves.size() == 0) {
       return false;
