@@ -32,7 +32,20 @@ public class Ghost {
   }
 
   public boolean move() {
-    return false;
+    ArrayList validMoves = get_valid_moves();
+
+    if (validMoves == null || validMoves.size() == 0) {
+      return false;
+    }
+
+    else {
+      Location newPos = validMoves.get(0);
+      myLoc = newPos;
+      //move(String name, Location loc, Type type)
+      myMap.move(myName, myLoc, Map.Type.GHOST);
+      return true;
+    }
+
   }
 
   public boolean is_pacman_in_range() {
