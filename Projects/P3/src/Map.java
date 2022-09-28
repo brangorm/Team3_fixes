@@ -54,22 +54,90 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
-    return false;
+    
+    //determining if we should return false becuase unable to move because either 
+    //locations map doesn't have the name in it or the components map doesn't have name key 
+    //the field does not have the location in it
+    if ((!this.locations.containsKey(name)) || (!this.components.containsKey(name)) || 
+        (!this.field.containsKey(loc))){
+          return false;
+    }
+    //updating field by first removing type from the current location
+    this.field.get(this.locations.get(name)).remove(type);
+    //now adding type into new loc in field
+    this.field.get(loc).add(type);
+    //updating component
+    this.components.get(name).setLocation(loc.x,loc.y);
+    //updating location
+    this.locations.put(name, loc);
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
     // wallSet and emptySet will help you write this method
-    return null;
+    // **HashMap<Location, HashSet<Type>> field
+    if (field.containsKey(loc)) {
+      return field.get(loc);
+    }
+
+    else {
+      return null;
+    }
   }
 
   public boolean attack(String Name) {
-    // update gameOver
-    return false;
+    Location ghostLoc = locations.get(Name);
+    boolean success = false;
+    Location newLoc = null;
+    if (field.get(ghostLoc.shift(0, 1)).contains(Map.Type.PACMAN)) {
+       success = true;
+       newLoc = ghostLoc.shift(0, 1);
+    }
+
+    else if (field.get(ghostLoc.shift(1, 0)).contains(Map.Type.PACMAN)) {
+      success = true;
+      newLoc = ghostLoc.shift(1, 0);
+    }
+
+    else if (field.get(ghostLoc.shift(0, -1)).contains(Map.Type.PACMAN)) {
+      success = true;
+      newLoc = ghostLoc.shift(0, -1);
+    }
+
+    else if (field.get(ghostLoc.shift(-1, 0)).contains(Map.Type.PACMAN)) {
+      success = true;
+      newLoc = ghostLoc.shift(-1, 0);
+    } 
+
+    if (success) {
+      field.get(ghostLoc).remove(Type.GHOST);
+      field.get(newLoc).add(Type.GHOST);
+
+      locations.remove(Name);
+      locations.put(Name, newLoc);
+      
+      components.get(Name).setLocation(newLoc.x, newLoc.y);
+      
+      
+      // update gameOver
+      gameOver = true;
+    }
+    
+
+    return success;
   }
 
   public JComponent eatCookie(String name) {
     // update locations, components, field, and cookies
     // the id for a cookie at (10, 1) is tok_x10_y1
+   if (getLoc(locations.get(name)).contains(Map.Type.COOKIE)) {
+    JComponent c = components.get("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
+    cookies--;
+    locations.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
+    components.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
+    return c;
+   } else {
     return null;
+   }
   }
 }
