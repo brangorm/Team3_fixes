@@ -6,9 +6,17 @@
 - Olivia Miskala-Dinc
 - Seth Treiman
 ## Image of code playing PacMan
+<img width="596" alt="Screen Shot 2022-09-28 at 4 01 11 PM" src="https://user-images.githubusercontent.com/14205490/192877557-dbdddf33-d2a1-4b07-92fe-55b6a8f61d8c.png">
 
 ## How to run the code from the command line
-code block here
+First, compile the code by doing
+```javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java```
+Then, if you want to run the game, do
+```java -cp "src/" StartMenu```
+Finally, if you want to run all tests at once, do
+```
+java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+```
 
 ## List of Functions
 ### get_valid_moves() in the Pacman Class
