@@ -15,7 +15,7 @@ Then, if you want to run the game, do
 ```java -cp "src/" StartMenu```
 Finally, if you want to run all tests at once, do
 
-> ``` java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves ```
+> ``` java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack  TestConsume  TestGhostInRange  TestGhostMove  TestGhostValidMoves  TestMapAttack  TestMapEatCookie  TestMapGetLoc  TestMapMove  TestPacManInRange  TestPacManMove  TestPacManValidMoves ```
 
 ## List of Functions
 ### get_valid_moves() in the Pacman Class
