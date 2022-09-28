@@ -86,8 +86,45 @@ public class Map {
   }
 
   public boolean attack(String Name) {
-    // update gameOver
-    return false;
+    Location ghostLoc = locations.get(Name);
+    boolean success = false;
+    Location newLoc = null;
+    if (field.get(ghostLoc.shift(0, 1)).contains(Map.Type.PACMAN)) {
+       success = true;
+       newLoc = ghostLoc.shift(0, 1);
+    }
+
+    else if (field.get(ghostLoc.shift(1, 0)).contains(Map.Type.PACMAN)) {
+      success = true;
+      newLoc = ghostLoc.shift(1, 0);
+    }
+
+    else if (field.get(ghostLoc.shift(0, -1)).contains(Map.Type.PACMAN)) {
+      success = true;
+      newLoc = ghostLoc.shift(0, -1);
+    }
+
+    else if (field.get(ghostLoc.shift(-1, 0)).contains(Map.Type.PACMAN)) {
+      success = true;
+      newLoc = ghostLoc.shift(-1, 0);
+    } 
+
+    if (success) {
+      field.get(ghostLoc).remove(Type.GHOST);
+      field.get(newLoc).add(Type.GHOST);
+
+      locations.remove(Name);
+      locations.put(Name, newLoc);
+      
+      components.get(Name).setLocation(newLoc.x, newLoc.y);
+      
+      
+      // update gameOver
+      gameOver = true;
+    }
+    
+
+    return success;
   }
 
   public JComponent eatCookie(String name) {
