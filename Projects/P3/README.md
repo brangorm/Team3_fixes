@@ -19,8 +19,8 @@ Finally, if you want to run all tests at once, do
 
 ## List of Functions
 ### get_valid_moves() in the Pacman Class
-- description of implementation
-- description of test 
+- This code works by putting all the non-diagonal adjacent locations into a list and then filtering out all the locations that contain either null, ghost, or a wall. Once done filtering, it returns a list of valid locations. 
+- The test creates a board and a single pacman at location (10,10). It then calls the get_valid_moves(), and then makes sure list of valid locations contains ((10,9), (10,11), (9,10), (11,10)). 
 
 ### move() in the Pacman Class
 - description of implementation
@@ -35,8 +35,8 @@ Finally, if you want to run all tests at once, do
 - description of test 
 
 ### get_valid_moves() in the Ghost Class
-- description of implementation
-- description of test 
+- This code works by putting all the non-diagonal adjacent locations into a list and then filtering out all the locations that contain either null locations, ghost, or a wall. Once done filtering, it returns a list of the valid locations. 
+- - The test creates a board, single pacman at location (10,11), and a ghost at location (10,10). It then calls the get_valid_moves() function and then makes sure list of valid locations contains ((10,11), (10,9)) and list of invalid locations contains ((9,10), (11,10)). 
 
 ### move() in the Ghost Class
 - description of implementation
@@ -51,8 +51,8 @@ Finally, if you want to run all tests at once, do
 - description of test 
 
 ### move(String name, Location loc, Type type) in the Map Class
-- description of implementation
-- description of test 
+- This code first verifies that the locations field contains the key "name", components field contains the key "name", and the field field contains the key "loc". If any of these fail to be true then this function returns False. From here, it first updates the type paramater from it's old location to new location in the field. Then it updates the component and loctation fields before returning True. 
+- The test works by creating a frame and Ghost object in location (10,9) and color red. It then verifies that calling map move function returns True. 
 
 ### getLoc(Location loc) in the Map Class
 - description of implementation
