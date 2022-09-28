@@ -79,9 +79,10 @@ public class Map {
     if (field.containsKey(loc)) {
       return field.get(loc);
     }
-
-    else {
-      return null;
+    else if (loc.x < dim || loc.y < dim || loc.x > dim || loc.y > dim) {
+      return emptySet;
+    } else {
+      return wallSet;
     }
   }
 
@@ -135,6 +136,7 @@ public class Map {
     cookies--;
     locations.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
     components.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
+    field.get(locations.get(name)).remove(Type.COOKIE);
     return c;
    } else {
     return null;

@@ -16,9 +16,11 @@ public class TestGhostValidMoves extends TestCase {
     //where pacman is
     assertTrue(validMoves.contains(new Location(10,11)));
 
-    //standard other cases
+    //Non-wall
     assertTrue(validMoves.contains(new Location(10,9)));
-    assertTrue(validMoves.contains(new Location(9,10)));
-    assertTrue(validMoves.contains(new Location(11,10)));
+
+    //walls
+    assertFalse(validMoves.contains(new Location(9,10)));
+    assertFalse(validMoves.contains(new Location(11,10)));
   }
 }

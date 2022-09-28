@@ -53,19 +53,25 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
-    if (!myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.GHOST)) {
+  
+    if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.GHOST)) {
+      System.out.println("0,1");
+      System.out.println(myMap.getLoc(myLoc.shift(0, 1)));
       return true;
     }
 
-    else if (!myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.GHOST)) {
+    else if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.GHOST)) {
+       System.out.println("1,0");
       return true;
     }
 
-    else if (!myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.GHOST)) {
+    else if (myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.GHOST)) {
+       System.out.println("0,-1");
       return true;
     }
 
-    else if (!myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.GHOST)) {
+    else if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.GHOST)) {
+       System.out.println("-1, 0");
       return true;
     } 
 
@@ -75,6 +81,16 @@ public class PacMan {
   }
 
   public JComponent consume() {
-    return null;
+    // NOTE
+    // This method was written by mattlacek
+    // but I accidentially deleted it in a commit. 
+    // Since I wish to keep the other changes from that commit,
+    // I will not reverse the commit directly, I will
+    // just add the method back here. 
+    if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
+       return myMap.eatCookie(myName);
+     } else {
+       return null;
+     }
   }
 }
