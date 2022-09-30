@@ -5,6 +5,7 @@
 - Matthew Lacek
 - Olivia Miskala-Dinc
 - Seth Treiman
+
 ## Image of code playing PacMan
 <img width="596" alt="Screen Shot 2022-09-28 at 4 01 11 PM" src="https://user-images.githubusercontent.com/14205490/192877557-dbdddf33-d2a1-4b07-92fe-55b6a8f61d8c.png">
 
@@ -23,8 +24,8 @@ Finally, if you want to run all tests at once, do
 - The test creates a board and a single pacman at location (10,10). It then calls the get_valid_moves(), and then makes sure list of valid locations contains ((10,9), (10,11), (9,10), (11,10)). 
 
 ### move() in the Pacman Class
-- description of implementation
-- description of test 
+- This code works by first calling the get_valid_moves() method to retreive the ArrayList of valid moves, then checks if there is a valid move to move to. If there are no valid moves, false is returned. If there is a valid move, the first available location is selected. Then the pacman's myLoc field is updates to the new location, and the pacman is moved on the map using the Map.move() method, and true is returned.
+- The test creates a frame and adds a pacman at location 5,5 then asserts that the pacman is able to move.  
 
 ### is_ghost_in_range() in the Pacman Class
 - This code works by checking the adjacent non-diagonal locations to see if one of them contains a ghost.
@@ -36,11 +37,11 @@ Finally, if you want to run all tests at once, do
 
 ### get_valid_moves() in the Ghost Class
 - This code works by putting all the non-diagonal adjacent locations into a list and then filtering out all the locations that contain either null locations, ghost, or a wall. Once done filtering, it returns a list of the valid locations. 
-- - The test creates a board, single pacman at location (10,11), and a ghost at location (10,10). It then calls the get_valid_moves() function and then makes sure list of valid locations contains ((10,11), (10,9)) and list of invalid locations contains ((9,10), (11,10)). 
+- The test creates a board, single pacman at location (10,11), and a ghost at location (10,10). It then calls the get_valid_moves() function and then makes sure list of valid locations contains ((10,11), (10,9)) and list of invalid locations contains ((9,10), (11,10)). 
 
 ### move() in the Ghost Class
-- description of implementation
-- description of test 
+- This code works by first calling the get_valid_moves() method to retreive the ArrayList of valid moves, then checks if there is a valid move to move to. If there are no valid moves, false is returned. If there is a valid move, the first available location is selected. Then the ghost's myLoc field is updates to the new location, and the ghost is moved on the map using the Map.move() method, and true is returned.
+- The test creates a frame and adds a ghost at location (5,5) then asserts that the ghost is able to move.  
 
 ### is_pacman_in_range() in the Ghost Class
 - This code works by checking the adjacent non-diagonal locations to see if one of them contains pacman.
@@ -55,8 +56,8 @@ Finally, if you want to run all tests at once, do
 - The test works by creating a frame and Ghost object in location (10,9) and color red. It then verifies that calling map move function returns True. 
 
 ### getLoc(Location loc) in the Map Class
-- description of implementation
-- description of test 
+- This code works by taking the Location loc parameter and first checking if the location is a valid location in the field. If it is a valid location, the method returns what is stored in the field map with the loc key. Otherwise, if the location is not found in the field, it checks to see if the location is found within the dimensions of the map. If it is, emptyset is returned. Otherwise, the wallset is returned. 
+- The test creates a frame and places a ghost at location (5,5) and a ghost at location (2,2) and then asserts that there is a ghost at location (5,5) and a ghost at location (2,2).
 
 ### attack(String name) in the Map Class
 - This code works by checking to make sure a pacman is in attack range, and if it is, it attacks and ends the game by setting gameOver to true.
