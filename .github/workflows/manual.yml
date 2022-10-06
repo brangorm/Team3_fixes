@@ -22,4 +22,4 @@ jobs:
       run: cd Projects/P3; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
        # Runs a single command using the runners shell
     - name: Run tests for methods written by Seth
-      run: java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange TestMapAttack TestPacManInRange
+      run: cd Projects/P3; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange TestMapAttack TestPacManInRange
