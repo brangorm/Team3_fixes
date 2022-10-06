@@ -120,8 +120,8 @@ public class Map {
       components.get(Name).setLocation(newLoc.x, newLoc.y);
       
       
-      // update gameOver
-      gameOver = true;
+      // uh oh, someone commented out the update to gameOver!
+      // gameOver = true;
     }
     
 
