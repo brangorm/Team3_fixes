@@ -20,3 +20,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: Compile Java Files
       run: cd Projects/P3; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+    # runs tests for olivias parts
+    - name: Run tests for Olivia's parts
+      run: cd Projects/P3; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove TestPacManMove TestMapGetLoc
