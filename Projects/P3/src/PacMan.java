@@ -48,7 +48,11 @@ public class PacMan {
       myLoc = newPos;
       //move(String name, Location loc, Type type)
       myMap.move(myName, myLoc, Map.Type.PACMAN);
-      return true;
+      
+      
+      //return true;
+      // should return true but now returns false 
+      return false;
     }
   }
 
