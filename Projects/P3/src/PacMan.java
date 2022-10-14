@@ -16,6 +16,7 @@ public class PacMan {
   public ArrayList<Location> get_valid_moves() {
     ArrayList<Location> possibleMoves = new ArrayList<Location>();
     ArrayList<Location> validMoves = new ArrayList<Location>();
+    /*Uncomment this code to make it work again 
 
     possibleMoves.add(this.myLoc.shift(0,1));
     possibleMoves.add(this.myLoc.shift(1,0));
@@ -33,6 +34,8 @@ public class PacMan {
             validMoves.add(possibleMoves.get(i));
       }
     }
+    */
+   //breaks by always returning empty lists
     return validMoves; 
   }
 

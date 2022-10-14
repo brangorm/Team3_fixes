@@ -55,6 +55,8 @@ public class Map {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
     
+
+    /* Uncomment this to make code work 
     //determining if we should return false becuase unable to move because either 
     //locations map doesn't have the name in it or the components map doesn't have name key 
     //the field does not have the location in it
@@ -71,6 +73,11 @@ public class Map {
     //updating location
     this.locations.put(name, loc);
     return true;
+
+    */
+
+    //breaking it by always returning false, make sure to delete
+    return false; 
   }
 
   public HashSet<Type> getLoc(Location loc) {
