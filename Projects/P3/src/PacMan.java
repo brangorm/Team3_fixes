@@ -87,8 +87,11 @@ public class PacMan {
     // Since I wish to keep the other changes from that commit,
     // I will not reverse the commit directly, I will
     // just add the method back here. 
+    
     if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
-       return myMap.eatCookie(myName);
+      // WHOOPS SOMEONE COMMENTED OUT THE RETURN LINE
+       //return myMap.eatCookie(myName);
+      return null;
      } else {
        return null;
      }
