@@ -15,6 +15,8 @@ public class Ghost {
     ArrayList<Location> possibleMoves = new ArrayList<Location>();
     ArrayList<Location> validMoves = new ArrayList<Location>();
 
+    /*Uncomment this code to make it work again 
+
     possibleMoves.add(this.myLoc.shift(0,1));
     possibleMoves.add(this.myLoc.shift(1,0));
     possibleMoves.add(this.myLoc.shift(-1,0));
@@ -28,6 +30,8 @@ public class Ghost {
             validMoves.add(possibleMoves.get(i));
       } 
     }
+    */
+   //breaks by always returning empty list 
     return validMoves; 
   }
 
@@ -43,14 +47,19 @@ public class Ghost {
       myLoc = newPos;
       //move(String name, Location loc, Type type)
       myMap.move(myName, myLoc, Map.Type.GHOST);
-      return true;
+
+
+      // should return true, now returns false 
+      //return true;
+      return false;
     }
 
   }
 
   public boolean is_pacman_in_range() {
     if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.PACMAN)) {
-      return true;
+      // Uh oh, someone changed the boolean below!
+      return false;
     }
 
     else if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.PACMAN)) {
@@ -72,7 +81,9 @@ public class Ghost {
 
   public boolean attack() {
     if (is_pacman_in_range()) {
-      return myMap.attack(myName);
+      // WHOOPS SOMEONE COMMENTED OUT THE RETURN LINE
+      //return myMap.attack(myName);
+      return false;
     } else {
       return false;
     }

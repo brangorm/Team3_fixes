@@ -16,6 +16,7 @@ public class PacMan {
   public ArrayList<Location> get_valid_moves() {
     ArrayList<Location> possibleMoves = new ArrayList<Location>();
     ArrayList<Location> validMoves = new ArrayList<Location>();
+    /*Uncomment this code to make it work again 
 
     possibleMoves.add(this.myLoc.shift(0,1));
     possibleMoves.add(this.myLoc.shift(1,0));
@@ -33,6 +34,8 @@ public class PacMan {
             validMoves.add(possibleMoves.get(i));
       }
     }
+    */
+   //breaks by always returning empty lists
     return validMoves; 
   }
 
@@ -48,7 +51,11 @@ public class PacMan {
       myLoc = newPos;
       //move(String name, Location loc, Type type)
       myMap.move(myName, myLoc, Map.Type.PACMAN);
-      return true;
+      
+      
+      //return true;
+      // should return true but now returns false 
+      return false;
     }
   }
 
@@ -67,7 +74,8 @@ public class PacMan {
 
     else if (myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.GHOST)) {
        System.out.println("0,-1");
-      return true;
+       // Uh oh, someone changed the boolean below!
+       return false;
     }
 
     else if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.GHOST)) {
@@ -87,8 +95,11 @@ public class PacMan {
     // Since I wish to keep the other changes from that commit,
     // I will not reverse the commit directly, I will
     // just add the method back here. 
+    
     if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
-       return myMap.eatCookie(myName);
+      // WHOOPS SOMEONE COMMENTED OUT THE RETURN LINE
+       //return myMap.eatCookie(myName);
+      return null;
      } else {
        return null;
      }

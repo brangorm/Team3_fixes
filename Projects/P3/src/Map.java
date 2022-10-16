@@ -55,6 +55,8 @@ public class Map {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
     
+
+    /* Uncomment this to make code work 
     //determining if we should return false becuase unable to move because either 
     //locations map doesn't have the name in it or the components map doesn't have name key 
     //the field does not have the location in it
@@ -71,13 +73,20 @@ public class Map {
     //updating location
     this.locations.put(name, loc);
     return true;
+
+    */
+
+    //breaking it by always returning false, make sure to delete
+    return false; 
   }
 
   public HashSet<Type> getLoc(Location loc) {
     // wallSet and emptySet will help you write this method
     // **HashMap<Location, HashSet<Type>> field
     if (field.containsKey(loc)) {
-      return field.get(loc);
+      // should return field.get(loc);
+      //return field.get(loc);
+      return wallSet;
     }
     else if (loc.x < dim || loc.y < dim || loc.x > dim || loc.y > dim) {
       return emptySet;
@@ -120,8 +129,8 @@ public class Map {
       components.get(Name).setLocation(newLoc.x, newLoc.y);
       
       
-      // update gameOver
-      gameOver = true;
+      // uh oh, someone commented out the update to gameOver!
+      // gameOver = true;
     }
     
 
@@ -132,12 +141,14 @@ public class Map {
     // update locations, components, field, and cookies
     // the id for a cookie at (10, 1) is tok_x10_y1
    if (getLoc(locations.get(name)).contains(Map.Type.COOKIE)) {
-    JComponent c = components.get("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
-    cookies--;
-    locations.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
-    components.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
-    field.get(locations.get(name)).remove(Type.COOKIE);
-    return c;
+     //WHOOPS SOMEONE COMMENTED OUT LITERALLY EVERYTHING THIS FUNCTION DOES
+    //JComponent c = components.get("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
+    //cookies--;
+    //locations.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
+    //components.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
+    //field.get(locations.get(name)).remove(Type.COOKIE);
+    //return c;
+    return null;
    } else {
     return null;
    }
