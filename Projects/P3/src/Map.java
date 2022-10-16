@@ -84,7 +84,9 @@ public class Map {
     // wallSet and emptySet will help you write this method
     // **HashMap<Location, HashSet<Type>> field
     if (field.containsKey(loc)) {
-      return field.get(loc);
+      // should return field.get(loc);
+      //return field.get(loc);
+      return wallSet;
     }
     else if (loc.x < dim || loc.y < dim || loc.x > dim || loc.y > dim) {
       return emptySet;

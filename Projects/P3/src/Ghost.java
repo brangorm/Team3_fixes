@@ -47,7 +47,11 @@ public class Ghost {
       myLoc = newPos;
       //move(String name, Location loc, Type type)
       myMap.move(myName, myLoc, Map.Type.GHOST);
-      return true;
+
+
+      // should return true, now returns false 
+      //return true;
+      return false;
     }
 
   }
