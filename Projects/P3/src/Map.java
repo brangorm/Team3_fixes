@@ -130,7 +130,7 @@ public class Map {
       
       
       // uh oh, someone commented out the update to gameOver!
-      // gameOver = true;
+      gameOver = true;
     }
     
 
