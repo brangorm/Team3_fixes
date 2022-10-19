@@ -141,14 +141,12 @@ public class Map {
     // update locations, components, field, and cookies
     // the id for a cookie at (10, 1) is tok_x10_y1
    if (getLoc(locations.get(name)).contains(Map.Type.COOKIE)) {
-     //WHOOPS SOMEONE COMMENTED OUT LITERALLY EVERYTHING THIS FUNCTION DOES
-    //JComponent c = components.get("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
-    //cookies--;
-    //locations.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
-    //components.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
-    //field.get(locations.get(name)).remove(Type.COOKIE);
-    //return c;
-    return null;
+    JComponent c = components.get("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
+    cookies--;
+    locations.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
+    components.remove("tok_x"+locations.get(name).x+"_y"+locations.get(name).y);
+    field.get(locations.get(name)).remove(Type.COOKIE);
+    return c;
    } else {
     return null;
    }

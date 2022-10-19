@@ -98,8 +98,7 @@ public class PacMan {
     
     if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
       // WHOOPS SOMEONE COMMENTED OUT THE RETURN LINE
-       //return myMap.eatCookie(myName);
-      return null;
+      return myMap.eatCookie(myName);
      } else {
        return null;
      }
