@@ -75,7 +75,7 @@ public class PacMan {
     else if (myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.GHOST)) {
        System.out.println("0,-1");
        // Uh oh, someone changed the boolean below!
-       return false;
+       return true;
     }
 
     else if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.GHOST)) {
