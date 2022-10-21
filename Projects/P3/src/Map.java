@@ -75,8 +75,7 @@ public class Map {
 
     
 
-    //breaking it by always returning false, make sure to delete
-    return false; 
+
   }
 
   public HashSet<Type> getLoc(Location loc) {
