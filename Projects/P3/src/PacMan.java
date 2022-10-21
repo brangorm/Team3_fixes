@@ -53,9 +53,7 @@ public class PacMan {
       myMap.move(myName, myLoc, Map.Type.PACMAN);
       
       
-      //return true;
-      // should return true but now returns false 
-      return false;
+      return true;
     }
   }
 
