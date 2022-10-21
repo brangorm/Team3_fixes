@@ -49,9 +49,7 @@ public class Ghost {
       myMap.move(myName, myLoc, Map.Type.GHOST);
 
 
-      // should return true, now returns false 
-      //return true;
-      return false;
+      return true;
     }
 
   }
