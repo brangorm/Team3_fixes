@@ -53,9 +53,7 @@ public class PacMan {
       myMap.move(myName, myLoc, Map.Type.PACMAN);
       
       
-      //return true;
-      // should return true but now returns false 
-      return false;
+      return true;
     }
   }
 
@@ -75,7 +73,7 @@ public class PacMan {
     else if (myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.GHOST)) {
        System.out.println("0,-1");
        // Uh oh, someone changed the boolean below!
-       return false;
+       return true;
     }
 
     else if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.GHOST)) {
@@ -98,8 +96,7 @@ public class PacMan {
     
     if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
       // WHOOPS SOMEONE COMMENTED OUT THE RETURN LINE
-       //return myMap.eatCookie(myName);
-      return null;
+      return myMap.eatCookie(myName);
      } else {
        return null;
      }

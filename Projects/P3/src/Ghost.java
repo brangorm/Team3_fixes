@@ -49,17 +49,14 @@ public class Ghost {
       myMap.move(myName, myLoc, Map.Type.GHOST);
 
 
-      // should return true, now returns false 
-      //return true;
-      return false;
+      return true;
     }
 
   }
 
   public boolean is_pacman_in_range() {
     if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.PACMAN)) {
-      // Uh oh, someone changed the boolean below!
-      return false;
+      return true;
     }
 
     else if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.PACMAN)) {
@@ -81,9 +78,7 @@ public class Ghost {
 
   public boolean attack() {
     if (is_pacman_in_range()) {
-      // WHOOPS SOMEONE COMMENTED OUT THE RETURN LINE
-      //return myMap.attack(myName);
-      return false;
+      return myMap.attack(myName);
     } else {
       return false;
     }
